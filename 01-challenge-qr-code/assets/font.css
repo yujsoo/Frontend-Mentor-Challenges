@@ -1,0 +1,19 @@
+@charset "utf-8";
+
+@font-face {
+    font-family:'Outfit';
+    font-style: normal;
+    font-weight: 400;
+    src: url('./font/Outfit-Regular.eot');
+    src: url('./font/Outfit-Regular.woff2') format('woff2'), 
+         url('./font/Outfit-Regular.ttf') format('truetype'); 
+}
+
+@font-face {
+    font-family:'Outfit';
+    font-style: normal;
+    font-weight: 700;
+    src: url('./font/Outfit-Bold.eot');
+    src: url('./font/Outfit-Bold.woff2') format('woff2'), 
+         url('./font/Outfit-Bold.ttf') format('truetype'); 
+}
