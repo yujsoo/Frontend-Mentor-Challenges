@@ -1,0 +1,35 @@
+@charset "utf-8";
+
+@import url('../assets/font.css');
+
+/* 초기화 */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary,
+time, mark, audio, video {margin:0; padding:0; border:0; font-size:100%; font: inherit;}
+
+:root {
+    --point-color:#F4D04E;
+    --black-color:#111;
+    --gray-color:#6B6B6B;
+}
+
+body {font-family:'Figtree';}
+
+/* 컨텐츠 스타일 */
+.blog-wrap {display:flex; padding:0 24px; height:100vh; align-items:center; background:var(--point-color)}
+
+.blog-card {max-width:382px; margin:0 auto; border-radius:20px; box-shadow: 8px 8px 0px 0px #000000; border:1px solid var(--black-color); background:#fff;}
+.blog-card a {display:block; width:100%; height:100%; text-decoration:none; padding:24px; box-sizing:border-box;}
+.blog-card a:hover .blog-content h1 {color:var(--point-color);}
+.blog-card .blog-thumb {width:100%; height:200px; border-radius:10px; overflow:hidden;}
+.blog-card .blog-thumb img {width:100%; height:100%; object-fit:cover;}
+.blog-card .blog-content {padding-top:20px; color:var(--black-color);}
+.blog-card .blog-content .tag {display:inline-block; padding:4px 12px; margin-bottom:12px; font-size: clamp(12px, 3.20vw, 14px); line-height:1.5; font-weight:800; border-radius:4px; background:var(--point-color);}
+.blog-card .blog-content .published {margin-bottom:12px; font-size: clamp(12px, 3.73vw, 14px); font-weight:500; line-height:1.5;}
+.blog-card .blog-content h1 {font-size: clamp(20px, 5.33vw, 24px); font-weight:800; line-height:1.5; transition:color .2s ease;}
+.blog-card .blog-content .txt {margin-top:12px; color:var(--gray-color); font-size: clamp(14px, 3.73vw, 16px); font-weight:500; line-height:1.5;}
+.blog-card .writer {display:flex; margin-top:24px; align-items: center;}
+.blog-card .writer .img {width:32px; height:32px; border-radius:50%; overflow:hidden;} 
+.blog-card .writer .img img {width:100%;}
+.blog-card .writer > span {display:block; margin-left:12px; font-size:14px; font-weight:800; line-height:1.5;}

@@ -1,0 +1,7 @@
+@charset "utf-8";
+
+@font-face {
+    font-family:'Figtree';
+    font-style: normal;
+    src: url("./font/Figtree-VariableFont_wght.ttf");
+}
