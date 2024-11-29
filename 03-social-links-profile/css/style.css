@@ -30,7 +30,7 @@ body {display:flex; height:100vh; align-items:center; padding:0 24px; font-famil
 .profile-card .user-info .greeting {margin-top:24px; font-size:14px; line-height:1.5;}
 .profile-card .social-link {margin-top:24px;}
 .profile-card .social-link li {text-align:center;}
-.profile-card .social-link li + li {margin-top:24px;}
+.profile-card .social-link li + li {margin-top:16px;}
 .profile-card .social-link li a {display:block; width:100%; height:100%; padding:14px 0; color:var(--white-color); font-size:14px; font-weight:700; border-radius:8px; background:var(--text-color); transition:all .3s ease;}
 .profile-card .social-link li a:active,
 .profile-card .social-link li a:hover {color:var(--text-color); background:var(--point-color);}
@@ -40,7 +40,6 @@ body {display:flex; height:100vh; align-items:center; padding:0 24px; font-famil
 /* Tablet */
 @media all and (max-width:768px){
     .profile-card {max-width:456px;}
-    .profile-card .social-link li + li {margin-top:16px;}
 }
 
 /* Mobile */
