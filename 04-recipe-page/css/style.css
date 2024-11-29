@@ -29,9 +29,10 @@ body {padding:128px 76px; font-size:16px; font-family:'outfit'; background:var(-
 
 .recipe-page {max-width:736px; padding:40px; margin:0 auto; border-radius:var(--border-radius-large); overflow:hidden; box-sizing:border-box; background:#fff;}
 .recipe-page h1 {color:var(--black-color); margin-bottom:24px; font-size:40px; font-family:'young-serif'; line-height:1;}
-.recipe-page section + section {margin-top:32px; padding-top:32px; border-top:1px solid var(--border-color-gray)}
+.recipe-page section + section {margin-top:32px;}
 .recipe-page section h2 {color:var(--brown-color); line-height:1;}
 .recipe-page section.content h2 {margin-bottom:24px; font-size:28px; font-family:'young-serif';}
+.recipe-page section.content + section.content {padding-top:32px; border-top:1px solid var(--border-color-gray)}
 .recipe-page section .txt {color:var(--gray-color); line-height:1.5;}
 .recipe-page section .list li {position:relative; padding-left:40px; color:var(--gray-color); line-height:1.5;}
 .recipe-page section .list li + li {margin-top:8px;}
