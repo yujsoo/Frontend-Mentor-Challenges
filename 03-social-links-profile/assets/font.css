@@ -1,0 +1,22 @@
+@charset "utf-8";
+
+@font-face {
+    font-family:'Inter';
+    font-style: normal;
+    font-weight: 400;
+    src: url("./font/Inter-Regular.ttf");
+}
+
+@font-face {
+    font-family:'Inter';
+    font-style: normal;
+    font-weight: 600;
+    src: url("./font/Inter-SemiBold.ttf");
+}
+
+@font-face {
+    font-family:'Inter';
+    font-style: normal;
+    font-weight: 700;
+    src: url("./font/Inter-Bold.ttf");
+}
