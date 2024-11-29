@@ -1,0 +1,53 @@
+@charset "utf-8";
+
+/**** outfit 폰트 ****/
+@font-face {
+    font-family:'outfit';
+    font-style: normal;
+    font-weight: 100;
+    src: url("./fonts/outfit/Outfit-Thin.ttf"); 
+}
+
+@font-face {
+    font-family:'outfit';
+    font-style: normal;
+    font-weight: 300;
+    src: url("./fonts/outfit/Outfit-Light.ttf"); 
+}
+
+@font-face {
+    font-family:'outfit';
+    font-style: normal;
+    font-weight: 400;
+    src: url("./fonts/outfit/Outfit-Regular.ttf"); 
+}
+
+@font-face {
+    font-family:'outfit';
+    font-style: normal;
+    font-weight: 500;
+    src: url("./fonts/outfit/Outfit-Medium.ttf");
+}
+
+@font-face {
+    font-family:'outfit';
+    font-style: normal;
+    font-weight: 600;
+    src: url("./fonts/outfit/Outfit-SemiBold.ttf");
+}
+
+@font-face {
+    font-family:'outfit';
+    font-style: normal;
+    font-weight: 700;
+    src: url("./fonts/outfit/Outfit-Bold.ttf");
+}
+
+
+/**** young-serif 폰트 ****/
+@font-face {
+    font-family:'young-serif';
+    font-style: normal;
+    font-weight: 400;
+    src: url("./fonts/young-serif/YoungSerif-Regular.ttf");
+}
