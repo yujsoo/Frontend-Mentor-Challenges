@@ -1,0 +1,272 @@
+@charset "utf-8";
+
+@use 'font';
+
+/* 초기화 */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary,
+time, mark, audio, video {margin:0; padding:0; border:0; font-size:100%; font:inherit;}
+ul {list-style:none;}
+a {text-decoration:none;}
+
+/* 변수 */
+$skyBlue-color:#ECF2F8;
+$white-color:#fff;
+$title-color:#48556A;
+$text-color:#6E8098;
+
+body {
+    display:flex;
+    height:100vh;
+    align-items: center;
+    justify-content: center;
+    font-family:'Manrope';
+    font-size:13px;
+    font-weight:500;
+    padding:0 24px;
+    background:$skyBlue-color;
+}
+
+h1 {position: absolute; left:-9999px;}
+
+main {
+    article {
+        position: relative;
+        max-width:730px;
+        height:280px;
+        box-shadow: 0px 40px 40px -10px rgba(201, 213, 225, 50%);
+        .content-wrap {
+            display:flex;
+            width:100%;
+            height:100%;
+            overflow:hidden;
+            border-radius:10px;
+            background:$white-color;
+            .img {
+                width:285px;
+                height: 100%;
+                flex-shrink:0;
+                img {
+                    width:100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+            .content {
+                padding:32px 40px;
+                h2 {
+                    margin-bottom:12px;
+                    font-size:20px;
+                    font-weight:700;
+                    color:$title-color;
+                    display:-webkit-box;
+                    line-clamp:3;
+                    -webkit-line-clamp: 3;  // 3줄로 제한
+                    -webkit-box-orient: vertical;
+                    overflow: hidden;
+                    line-height:1.35;
+                }
+                .txt {
+                    color:$text-color;
+                    font-weight:500;
+                    line-height:1.53;
+                    display: -webkit-box;
+                    line-clamp:3;
+                    -webkit-line-clamp: 3;  // 3줄로 제한
+                    -webkit-box-orient: vertical;
+                    overflow: hidden;
+                }
+                .writer {
+                    display:flex;
+                    align-items: center;
+                    margin-top:20px;
+                    padding-right:40px;
+                    .user-img {
+                        width:40px;
+                        height:40px;
+                        border-radius:50%;
+                        overflow:hidden;
+                        flex-shrink:0;
+                        img {
+                            width:100%;
+                        }
+                    }
+                    .info {
+                        padding-left:16px;
+                        line-height:1.53;
+                        .user-name {
+                            color:$title-color;
+                        }
+                        .date {
+                            color:#9DAEC2;
+                        }
+                    }
+                }
+            }
+        }
+        .share-box {
+            position:absolute;
+            bottom:36px;
+            right:40px;
+            &.active {
+                .share-list {
+                    display:block;
+                }
+            }
+            .share-list {
+                display:none;
+                position: absolute;
+                z-index:2;
+                top: calc(100% - 115px); /* 버튼 아래에 위치 */
+                left:50%;
+                height:55px;
+                transform:translateX(-51.5%);    
+                min-width:248px;
+                border-radius:10px;
+                box-shadow: 0px 10px 10px 0px rgba(201, 213, 225, 50%);
+                > div {
+                    display:flex;
+                    position: relative;
+                    z-index:2;
+                    min-width:100%;
+                    width: 100%;
+                    height: 100%;
+                    padding:0 37px;
+                    border-radius:10px;
+                    background:$title-color;
+                    align-items:center;
+                    color:#9DAEC2;
+                    box-sizing:border-box;
+                    > span {
+                        letter-spacing:5px;
+                    }
+                    ul {
+                        display:flex;
+                        margin-left:16px;
+                        li {
+                            width:20px;
+                            background-position:center;
+                            background-repeat:no-repeat;
+                            background-size: contain;
+                            &.facebook {
+                                background-image:url(../assets/images/icon-facebook.svg)
+                            }
+                            &.twitter {
+                                background-image:url(../assets/images/icon-twitter.svg)
+                            }
+                            &.pinterest {
+                                background-image:url(../assets/images/icon-pinterest.svg)
+                            }
+                            a {
+                                display:block;
+                                text-indent: -9999px;
+                            }
+                        }
+                        li + li {
+                            margin-left:16px;
+                        }
+                    }
+                }
+                &::after {
+                    content: '';
+                    position: absolute;
+                    z-index:1;
+                    bottom: -2px;
+                    left: 50%;
+                    transform: translateX(-50%) rotate(45deg);
+                    width: 24px;
+                    height: 12px;
+                    background-color: $title-color;
+                    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
+                }
+            }
+            .share-btn {
+                bottom:24px;
+                width:32px;
+                height:32px;
+                border-radius:50%;
+                border:0;
+                text-indent:-9999px;
+                cursor:pointer;
+                overflow:hidden;
+                background:$skyBlue-color url(../assets/images/icon-share.svg) no-repeat center/15px; 
+                transition:background-color .3s ease;
+                &:hover {
+                    background-color:$text-color;
+                    background-image:url(../assets/images/icon-share-on.svg);
+                }
+            }
+            
+        }
+    }
+}
+
+
+
+
+/* Tablet */
+@media all and (max-width:768px){
+    body {display:block; padding:74px 24px 0; height:auto;}
+    main {
+        article {
+            max-width:327px;
+            margin:0 auto;
+            height:auto;
+            border-radius:10px;
+            overflow:hidden;
+            .content-wrap {
+                display:block;
+                height:auto;
+                .img {
+                    width:100%;
+                    height:200px;
+                }
+                .content {
+                    padding:36px 32px 20px;
+                    .writer {
+                        margin-top:32px;
+                    }
+                }
+            }
+            .share-box {
+                position: absolute;
+                bottom:0;
+                right:0;
+                width:100%;
+                height:64px;
+                .share-btn {
+                    position:absolute;
+                    z-index:10;
+                    bottom:24px;
+                    right:32px;
+                }
+                .share-list {
+                    top: inherit;
+                    left: 0;
+                    bottom: 0;
+                    transform:inherit;
+                    min-width:100%;
+                    width:100%;
+                    height:100%;
+                    &::after {
+                        display:none;
+                    }
+                    > div {
+                        border-radius:0;
+                    }
+                }
+                &.active {
+                    .share-btn {
+                        bottom:calc(50% - 16px);
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* Mobile */
+@media all and (max-width:375px){
+
+}
