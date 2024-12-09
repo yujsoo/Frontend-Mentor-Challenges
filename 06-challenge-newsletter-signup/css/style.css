@@ -33,7 +33,12 @@ a {
   color: inherit;
 }
 
+b {
+  font-weight: 700;
+}
+
 /* 변수 */
+/* 버튼 공통 스타일 */
 body {
   display: flex;
   height: 100vh;
@@ -60,6 +65,9 @@ body {
   background-repeat: no-repeat;
   background-position: top 24px right 24px;
   background-image: url(../assets/images/illustration-sign-up-desktop.svg);
+}
+.news-letter.hide {
+  display: none;
 }
 .news-letter h1 {
   font-size: 56px;
@@ -145,22 +153,22 @@ body {
 }
 .news-letter .user-form button {
   position: relative;
-  z-index: 1;
-  width: 100%;
-  height: 56px;
+  z-index: 2;
   margin-top: 24px;
   color: #fff;
-  font-weight: 700;
-  background: #242742;
+  width: 100%;
+  height: 56px;
   border-radius: 8px;
   border: 0;
   font-size: 16px;
+  font-weight: 700;
   cursor: pointer;
+  background-color: #242742;
 }
 .news-letter .user-form button:before {
   content: "";
   position: absolute;
-  z-index: 1;
+  z-index: -1;
   top: 0;
   left: 0;
   width: 100%;
@@ -174,12 +182,6 @@ body {
 .news-letter .user-form button:hover::before {
   opacity: 1;
 }
-.news-letter .user-form button:hover:disabled {
-  cursor: not-allowed;
-}
-.news-letter .user-form button:hover:disabled::before {
-  opacity: 0;
-}
 .news-letter .user-form button span {
   position: relative;
   z-index: 1;
@@ -191,22 +193,115 @@ body {
   top: 50%;
   left: 50%;
   max-width: 504px;
+  padding: 152px 64px 64px;
   transform: translate(-50%, -50%);
   border-radius: 36px;
+  color: #242742;
+  box-sizing: border-box;
   background: #fff;
 }
-
-.attribution {
-  position: fixed;
-  bottom: 0;
+#success-popup:before {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  top: 48px;
+  left: 64px;
+  width: 64px;
+  height: 64px;
+  background: url(../assets/images/icon-success.svg) no-repeat center;
+  background-size: 100%;
+}
+#success-popup.open {
+  display: block;
+}
+#success-popup h2 {
+  margin-bottom: 24px;
+  font-size: 56px;
+  font-weight: 700;
+  line-height: 1;
+}
+#success-popup > p {
+  line-height: 1.5;
+}
+#success-popup button {
+  position: relative;
+  z-index: 2;
+  margin-top: 24px;
+  color: #fff;
+  width: 100%;
+  height: 56px;
+  border-radius: 8px;
+  border: 0;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  background-color: #242742;
+}
+#success-popup button:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
   left: 0;
   width: 100%;
-  padding: 10px 0;
-  text-align: center;
-  color: #fff;
+  height: 100%;
+  opacity: 0;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  box-shadow: 0px 16px 32px 0px rgba(255, 97, 85, 0.5);
+  background: linear-gradient(-155.535deg, #FF6A3A 0%, #FF527B 100%);
+}
+#success-popup button:hover::before {
+  opacity: 1;
+}
+#success-popup button span {
+  position: relative;
+  z-index: 1;
 }
 
 /* Tablet */
+@media all and (max-width: 1024px) {
+  body {
+    display: block;
+    padding: 0;
+  }
+  .news-letter {
+    max-width: 100%;
+    min-height: auto;
+    border-radius: 0;
+    padding: 324px 24px 40px;
+    background-position: top center;
+    background-size: 375px;
+    background-image: url(../assets/images/illustration-sign-up-mobile.svg);
+  }
+  .news-letter h1 {
+    font-size: 40px;
+  }
+  #success-popup {
+    position: relative;
+    max-width: 100%;
+    top: inherit;
+    left: inherit;
+    min-height: 100vh;
+    padding: 253px 24px;
+    border-radius: 0;
+    transform: inherit;
+  }
+  #success-popup:before {
+    top: 149px;
+    left: 24px;
+  }
+  #success-popup h2 {
+    font-size: 40px;
+  }
+  #success-popup button {
+    position: absolute;
+    z-index: 1;
+    bottom: 40px;
+    left: 24p;
+    width: calc(100% - 48px);
+  }
+}
 /* Mobile */
 
 /*# sourceMappingURL=style.css.map */

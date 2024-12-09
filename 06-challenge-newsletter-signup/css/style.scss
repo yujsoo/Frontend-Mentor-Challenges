@@ -9,11 +9,54 @@ figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, su
 time, mark, audio, video {margin:0; padding:0; border:0; font-size:100%; font:inherit;}
 ul {list-style:none;}
 a {text-decoration:none; color:inherit}
+b {font-weight:700;}
 
 /* 변수 */
 $paleNavy-color:#36384D;
 $darkNavy-color:#242742;
 $orange-color:#FF6155;
+
+/* 버튼 공통 스타일 */
+@mixin btn-common {
+    position: relative;
+    z-index: 2;
+    margin-top: 24px;
+    color: #fff;
+    width: 100%;
+    height: 56px;
+    border-radius: 8px;
+    border: 0;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    background-color: $darkNavy-color;
+
+    &:before {
+        content: '';
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        border-radius: 8px;
+        transition: all .3s ease;
+        box-shadow: 0px 16px 32px 0px rgba(255, 97, 85, 50%);
+        background: linear-gradient(-155.535deg, #FF6A3A 0%, #FF527B 100%);
+    }
+
+    &:hover {
+        &::before {
+            opacity: 1;
+        }
+    }
+    span {
+        position: relative;
+        z-index: 1;
+    }
+}
+
 
 body {
     display:flex;
@@ -28,6 +71,9 @@ body {
 }
  
 .news-letter {
+    &.hide {
+        display:none;
+    }
     max-width: 928px;
     width: 100%;
     min-height: 641px;
@@ -124,47 +170,7 @@ body {
             }
         }
         button {
-            position:relative;
-            z-index:1;
-            width:100%;
-            height:56px;
-            margin-top:24px;
-            color:#fff;
-            font-weight:700;
-            background:$darkNavy-color;
-            border-radius:8px;
-            border: 0;
-            font-size:16px;
-            cursor:pointer;
-            &:before {
-                content:'';
-                position:absolute;
-                z-index:1;
-                top:0;
-                left:0;
-                width:100%;
-                height:100%;
-                opacity:0;              
-                border-radius:8px;  
-                transition:all .3s ease;
-                box-shadow: 0px 16px 32px 0px rgba(255, 97, 85, 50%);
-                background: linear-gradient(-155.535deg, #FF6A3A 0%, #FF527B 100%);
-            }
-            &:hover {
-                &::before {
-                  opacity:1;
-                }
-                &:disabled {
-                    cursor:not-allowed;
-                    &::before {
-                        opacity:0;
-                    }
-                }
-            }
-            span {
-                position:relative;
-                z-index:1;
-            }
+            @include btn-common;
         }
     }
   }
@@ -175,23 +181,85 @@ body {
     top:50%;
     left:50%;
     max-width:504px;
+    padding:152px 64px 64px;
     transform:translate(-50%,-50%);
     border-radius:36px;
+    color:$darkNavy-color;
+    box-sizing: border-box;
     background:#fff;
+    &:before {
+        content:'';
+        position:absolute;
+        z-index:1;
+        top:48px;
+        left:64px;
+        width:64px;
+        height:64px;
+        background:url(../assets/images/icon-success.svg) no-repeat center;
+        background-size:100%;
+    }
+    &.open {
+        display:block;
+    }
+    h2 {
+        margin-bottom:24px;
+        font-size:56px;
+        font-weight:700;
+        line-height:1;
+    }
+    > p {
+        line-height:1.5;
+    }
+    button {
+        @include btn-common;
+    }
 }
-
-.attribution { 
-    position:fixed;
-    bottom:0;
-    left:0;
-    width:100%;
-    padding:10px 0;
-    text-align:center;
-    color:#fff;
-}
-
 
 /* Tablet */
+@media all and (max-width:1024px) {
+    body {
+        display:block;
+        padding:0;
+    }
+    .news-letter {
+        max-width: 100%;
+        min-height:auto;
+        border-radius: 0;
+        padding:324px 24px 40px;
+        background-position: top center;
+        background-size:375px;
+        background-image: url(../assets/images/illustration-sign-up-mobile.svg);
+        h1 {
+            font-size:40px;
+        }
+    }
+
+    #success-popup {
+        position:relative;
+        max-width: 100%;
+        top:inherit;
+        left:inherit;
+        min-height: 100vh;
+        padding:253px 24px;
+        border-radius:0;
+        transform:inherit;
+        &:before {
+            top:149px;
+            left:24px;
+        }
+        h2 {
+            font-size:40px;
+        }
+        button {
+            position:absolute;
+            z-index:1;
+            bottom:40px;
+            left:24p;
+            width:calc(100% - 48px);
+        }
+    }
+}
+
 @media all and (max-width:768px){
 }
 
